@@ -284,10 +284,18 @@ public class Main {
 //          Z6.hitOrMiss(new Picture("figury.png").level(125), se7a, Color.white, Color.black).show();
 //          Z6.hitOrMiss(new Picture("figury.png").level(125), se7b, Color.white, Color.black).show();
 
-          Z6.shade(new Picture("figury.png").level(125), se8a, Color.white, Color.black).show();
-          Z6.shade(new Picture("figury.png").level(125), se8b, Color.white, Color.black).show();
+//          Z6.shade(new Picture("figury.png").level(125), se8a, Color.white, Color.black).show();
+//          Z6.shade(new Picture("figury.png").level(125), se8b, Color.white, Color.black).show();
+//
+//          Z6.shade(new Picture("figury.png").level(125), se7a, Color.white, Color.black).show();
+//          Z6.shade(new Picture("figury.png").level(125), se7b, Color.white, Color.black).show();
 
-          Z6.shade(new Picture("figury.png").level(125), se7a, Color.white, Color.black).show();
-          Z6.shade(new Picture("figury.png").level(125), se7b, Color.white, Color.black).show();
+          Picture lenaRGB = new Picture("LENA_512.jpg");
+
+          Z6.erosionRGB(lenaRGB, se1a).show();
+          Z6.erosionRGB(lenaRGB, se2a).show();
+
+          Z6.dylanRGB(lenaRGB, se1a).show();
+          Z6.dylanRGB(lenaRGB, se2a).show();
     }
 }
