@@ -142,7 +142,14 @@ public class Main {
                 fig = new Picture("figury.png"),
                 se1a = new Picture(3,3),
                 se1b = new Picture(5,5),
-                se2a = new Picture(3,3);
+                se2a = new Picture(3,3),
+                se7a = new Picture(3,3),
+                se7b = new Picture(3,3),
+                se8a = new Picture(3,3),
+                se8b = new Picture(3,3);
+
+        Picture erofig, erolena;
+        System.out.println(Color.gray.getRed());
 
         se1a.set(0, 0, Color.black);
         se1a.set(0, 1, Color.red);
@@ -195,18 +202,92 @@ public class Main {
         se2a.set(2, 1, Color.red);
         se2a.set(2, 2, Color.red);
 
+        se7a.set(0, 0, Color.gray);
+        se7a.set(0, 1, Color.gray);
+        se7a.set(0, 2, Color.black);
+        se7a.set(1, 0, Color.gray);
+        se7a.set(1, 1, Color.red);
+        se7a.set(1, 2, Color.red);
+        se7a.set(2, 0, Color.black);
+        se7a.set(2, 1, Color.red);
+        se7a.set(2, 2, Color.black);
+
+        se7b.set(0, 0, Color.red);
+        se7b.set(0, 1, Color.gray);
+        se7b.set(0, 2, Color.black);
+        se7b.set(1, 0, Color.gray);
+        se7b.set(1, 1, Color.red);
+        se7b.set(1, 2, Color.gray);
+        se7b.set(2, 0, Color.black);
+        se7b.set(2, 1, Color.gray);
+        se7b.set(2, 2, Color.red);
+
+        se8a.set(0, 0, Color.red);
+        se8a.set(0, 1, Color.red);
+        se8a.set(0, 2, Color.red);
+        se8a.set(1, 0, Color.red);
+        se8a.set(1, 1, Color.gray);
+        se8a.set(1, 2, Color.red);
+        se8a.set(2, 0, Color.red);
+        se8a.set(2, 1, Color.red);
+        se8a.set(2, 2, Color.red);
+
+        se8b.set(0, 0, Color.gray);
+        se8b.set(0, 1, Color.red);
+        se8b.set(0, 2, Color.red);
+        se8b.set(1, 0, Color.red);
+        se8b.set(1, 1, Color.red);
+        se8b.set(1, 2, Color.red);
+        se8b.set(2, 0, Color.red);
+        se8b.set(2, 1, Color.red);
+        se8b.set(2, 2, Color.red);
+
         fig = fig.level(125);
-        Picture erofig = Z6.erosion(fig, se1a, Color.white);
-        Z4.sub(erofig, fig).show();
-
-        erofig = Z6.erosion(fig, se1b, Color.white);
-        Z4.sub(erofig, fig).show();
-
         lena = Picture.RGBtoHSV(lena)[2].level(125);
-        Picture erolena = Z6.erosion(lena, se1a, Color.white);
-        Z4.sub(erolena, lena).show();
+//        erofig = Z6.erosion(fig, se1a, Color.white);
+//        Z4.sub(erofig, fig).show();
+//
+//        erofig = Z6.erosion(fig, se1b, Color.white);
+//        Z4.sub(erofig, fig).show();
+//
+//        erolena = Z6.erosion(lena, se1a, Color.white);
+//        Z4.sub(erolena, lena).show();
+//
+//        erolena = Z6.erosion(lena, se2a, Color.white);
+//        Z4.sub(erolena, lena).show();
 
-        erolena = Z6.erosion(lena, se2a, Color.white);
-        Z4.sub(erolena, lena).show();
+
+//        erofig = Z6.erosion(fig, se1a, Color.black);
+//        erofig.show();
+//        Z4.sub(erofig, fig).show();
+//
+//        erofig = Z6.erosion(fig, se1b, Color.black);
+//        erofig.show();
+//        Z4.sub(erofig, fig).show();
+//
+//        erolena = Z6.erosion(lena, se1a, Color.black);
+//        erolena.show();
+//        Z4.sub(erolena, lena).show();
+//
+//        erolena = Z6.erosion(lena, se2a, Color.black);
+//        erolena.show();
+//        Z4.sub(erolena, lena).show();
+
+
+//        erofig = Z6.erosion(Z6.erosion(fig, se1a, Color.white), se1a, Color.black);
+//        Z4.sub(erofig, fig).show();
+//        //Z4.sub(fig, erofig).show();
+//        erofig = Z6.erosion(Z6.erosion(fig, se1a, Color.black), se1a, Color.white);
+//        //Z4.sub(erofig, fig).show();
+//        Z4.sub(fig, erofig).show();
+
+//          Z6.hitOrMiss(new Picture("figury.png").level(125), se7a, Color.white, Color.black).show();
+//          Z6.hitOrMiss(new Picture("figury.png").level(125), se7b, Color.white, Color.black).show();
+
+          Z6.shade(new Picture("figury.png").level(125), se8a, Color.white, Color.black).show();
+          Z6.shade(new Picture("figury.png").level(125), se8b, Color.white, Color.black).show();
+
+          Z6.shade(new Picture("figury.png").level(125), se7a, Color.white, Color.black).show();
+          Z6.shade(new Picture("figury.png").level(125), se7b, Color.white, Color.black).show();
     }
 }
